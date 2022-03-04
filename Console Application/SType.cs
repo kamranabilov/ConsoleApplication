@@ -4,12 +4,9 @@ using System.Text;
 
 namespace Console_Application
 {
-    enum Categories
+    enum SType
     {
-        Programming = 1, 
-        Design, 
-        System_administration,
+        Garantee = 1,
+        OffGarantee
     }
-
-
 }

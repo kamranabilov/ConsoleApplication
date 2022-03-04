@@ -6,4 +6,8 @@
     <RootNamespace>Console_Application</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Office.Interop.Outlook" Version="15.0.4797.1003" />
+  </ItemGroup>
+
 </Project>

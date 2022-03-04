@@ -9,12 +9,22 @@ namespace Console_Application
         private List<Group> _groups;
         public List<Group> Groups => _groups;
 
+        Group[] IGroupServis.Groups => throw new NotImplementedException();
+
         public void AllStuList()
         {
-            throw new NotImplementedException();
+            if (_groups.Count == 0)
+            {
+                Console.WriteLine("groupno nayn");
+                return;
+            }
+            foreach (Group group in _groups)
+            {
+                Console.WriteLine(group);
+            }
         }
 
-        public string CreateGroup(string groupno,string fullname, Categories category)
+        public string CreateNewGroup(string groupno,string fullname, Categories category)
         {
             if (groupno != groupno || fullname != fullname )
             {
@@ -40,16 +50,21 @@ namespace Console_Application
                     existedgroup = group;
                 }
             }
+            if ( existedgroup == null)
+            {
+                Console.WriteLine("Please coose correct groupno");
+                return;
+            }
+            foreach (Group group in _groups)
+            {
+                if (group.No.ToLower().Trim() == newGroupNo.ToLower().Trim())
+                {
+                    Console.WriteLine($"{newGroupNo} already group exist");
+                    return;
+                }
+            }
+            existedgroup.No = newGroupNo.ToUpper();
         }
-
-        public void GroupList()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void GroupStulist()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

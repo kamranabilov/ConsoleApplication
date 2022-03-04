@@ -6,18 +6,19 @@ namespace Console_Application
 {
     interface IGroupServis
     {
-        public List<Group> Groups { get; }
+        Group[] Groups { get; }
+        public List<Group> Group { get; }
 
-        public string CreateGroup(string groupno, string fullname, Categories category);
+        public void CreateNewGroup(string groupno, string fullname, Categories category);
 
-        public void GroupList();
+        public void GroupsListSHow(string AllGroupno, SType sType, int limit);
 
-        public void GroupEdit(string groupno, string newGroupNo);
+        public void GroupEdit(string groupno, string newGroupNo, int limit);
 
-        public void GroupStulist();
+        public void GroupStulist(string groupno, string newGroupNo);
 
-        public void AllStuList();
+        public void AllStuList(string fullname, string groupno, bool isonline);
 
-        public string CreateStudent();
+        public void CreateStudent(string groupno, string fullanem, SType sType, bool isonline);
     }
 }

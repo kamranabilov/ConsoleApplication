@@ -5,39 +5,41 @@ using System.Text;
 namespace Console_Application
 {
     class Group
-    {
-        public string No;
-        public static int count;
-        public bool isOnline;
-        public int Limit;
-        public int stuCount;
-        public Categories Category;
+    {        
+        public static int count = 100;
+        public string No;  
+        public GroupType groupType { get; set; }
+        public int Limit { get; set; }
+        public Student[] Students;
+        
 
 
-        public Group(string groupno, string fullname, Categories category)
+        public Group(GroupType groupType, int limit)
         {
-           object Count = null;
-            switch (Category)
-            {
-                case Categories.Programming:
-                    No = $"P-{Count}";
-                    break;
-                case Categories.Design:
-                    No = $"D-{count}";
-                    break;
-                case Categories.System_administration:
-                    No = $"S-{count}";
-                    break;
-
-                default:
-                    break;
-            }
-            Category = category;
-            //Count++;
-
-            
+            Students = new Student[0];
+            GroupType = groupType;
+            Limit = limit;
+            count++;
+            No = $"{char.ToUpper(groupType.ToString()[0])}{count}";
+                                             
         }
-       
+        public void CreatedStudent(Student student)
+        {
+            if (Students.Length < Limit)
+            {
+                Array.Resize(ref Students, Students.Length + 1);
+                Students[Students.Length - 1] = student;
+            }
+            else
+            {
+                Console.WriteLine("no group");
+            }
+        }
+        public override string ToString()
+        {
+            return $"GroupNo": { }
+        }
+
 
     }
 }
