@@ -1,4 +1,5 @@
 ﻿using DocuSign.eSign.Model;
+using Microsoft.Office.Interop.Outlook;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Console_Application
         private Group[] groups;
         public Group[] _groups;
 
-        public Group[] Groups => throw new NotImplementedException();
+        public Group[] Groups => _groups;
 
         //public Group[] Groups => _groups;
         public GroupServis()
@@ -24,7 +25,7 @@ namespace Console_Application
         }                    
         public void AllStuListShow(string fullname, string groupno, bool isonline)
         {
-            throw new NotImplementedException();
+            Console.WriteLine(1);
         }
 
         public void CreatenewGroup(string groupno, string fullname, bool isonline)
@@ -139,12 +140,17 @@ namespace Console_Application
             }
         }
 
-        public void GroupsListSHow(string AllGroupno, SType sType, int limit)
+        public void CreatenewGroup(string groupno, OlGroupType groupType, int limitNum)
         {
-            throw new NotImplementedException();
+            Console.WriteLine();
         }
 
-        public void GroupStulist(string groupno, string newGroupNo)
+        public void GroupsListSHow(string AllGroupno, SType sType, int limit)
+        {
+            Console.WriteLine();
+        }
+
+        public void GroupStulist(string groupno, bool isonline, string newGroupNo)
         {
             throw new NotImplementedException();
         }
