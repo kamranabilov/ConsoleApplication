@@ -40,6 +40,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "DocuSign.eSign.dll": {
+              "target": "Package",
+              "version": "[5.9.0, )"
+            },
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.15.0, )"
+            },
             "Microsoft.Office.Interop.Outlook": {
               "target": "Package",
               "version": "[15.0.4797.1003, )"

@@ -6,23 +6,42 @@ namespace Console_Application
 {
     class Group
     {        
-        public static int count = 100;
-        public string No;  
+        private static int _count = 100;
+        public string No;
         public GroupType groupType { get; set; }
+
+        public GroupType GetGroupType()
+        {
+            return groupType;
+        }
+
+        public void SetGroupType(GroupType value)
+        {
+            groupType = value;
+        }
         public int Limit { get; set; }
         public Student[] Students;
         
 
 
-        public Group(GroupType groupType, int limit)
+        public Group(string groupno, GroupType groupType, int limit)
         {
             Students = new Student[0];
-            GroupType = groupType;
+            SetGroupType(groupType);
             Limit = limit;
-            count++;
-            No = $"{char.ToUpper(groupType.ToString()[0])}{count}";
+            _count++;
+            No = $"{char.ToUpper(groupType.ToString()[0])}{_count}";
                                              
         }
+
+        public Group(string groupno)
+        {
+        }
+
+        public Group(string groupno, string fullname, bool isonline) : this(groupno)
+        {
+        }
+
         public void CreatedStudent(Student student)
         {
             if (Students.Length < Limit)
@@ -32,14 +51,16 @@ namespace Console_Application
             }
             else
             {
-                Console.WriteLine("no group");
+                Console.WriteLine("no pleace group");
             }
         }
         public override string ToString()
         {
-            return $"GroupNo": { }
+            return $"GroupNo: {No}/nGroupType: {GetGroupType()}/nLimit: {Limit}";
         }
 
-
+        public class GroupType
+        {
+        }
     }
 }

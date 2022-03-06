@@ -14,3 +14,14 @@ C:\Users\HP\Desktop\Console Application\obj\Debug\netcoreapp3.1\Console Applicat
 C:\Users\HP\Desktop\Console Application\obj\Debug\netcoreapp3.1\Console Application.csproj.AssemblyReference.cache
 C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\Microsoft.Office.Interop.Outlook.dll
 C:\Users\HP\Desktop\Console Application\obj\Debug\netcoreapp3.1\Console Application.csproj.CopyComplete
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\DocumentFormat.OpenXml.dll
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\DocuSign.eSign.dll
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\HP\Desktop\Console Application\bin\Debug\netcoreapp3.1\System.IO.Packaging.dll

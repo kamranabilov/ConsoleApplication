@@ -10,6 +10,4 @@ namespace Console_Application
         Design, 
         System_administration,
     }
-
-
 }
