@@ -6,9 +6,7 @@ using System.Text.RegularExpressions;
 namespace Console_Application
 {
     class Program
-    {
-        public static int ChooseNum;
-
+    {        
         static void Main(string[] args)
         {
             GroupServis groupServis = new GroupServis();
@@ -79,7 +77,7 @@ namespace Console_Application
             }
             else
             {
-                Console.WriteLine("Zzz");
+                Console.WriteLine("Fullname edit");
                 return;
             }
 
@@ -190,7 +188,7 @@ namespace Console_Application
             }
 
             bool isonline = isonlinestr.ToLower() == "y";
-            groupServis.GroupStulist(groupno, isonline, fullname);
+            groupServis.GroupStulist(groupno);
         }
 
         public static void GroupEdit(ref GroupServis groupServis)

@@ -15,7 +15,7 @@ namespace Console_Application
 
         public void GroupEdit(string groupno, string newGroupNo);
 
-        public void GroupStulist();
+        public void GroupStulist(string groupno);
 
         public void AllStuListShow();
 

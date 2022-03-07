@@ -7,44 +7,28 @@ using System.Text;
 namespace Console_Application
 {
     class GroupServis : IGroupServis
-    {        
-
+    {
+        //public Group[] _groups;
         //private List<Group> _groups = new List<Group>();
         //private string no;
         //public List<Group> Groups => _groups;
-        private Group[] groups;
-        public Group[] _groups;
-
-        public Group[] Groups => _groups;
-
-        //public Group[] Groups => _groups;
+        private Group[] _groups;        
+        public Group[] Groups => _groups;        
         public GroupServis()
         {
             _groups = new Group[0];
             //_groups = new List<Group>();
-        }                    
-        public void AllStuListShow(string fullname, string groupno, bool isonline)
-        {
-            Console.WriteLine(1);
-        }
+        }                            
 
-        public void CreatenewGroup(string groupno, string fullname, bool isonline)
+        public void CreatenewGroup(string groupno, Group.GroupType groupType, int limit)
         {
+
             Array.Resize(ref _groups, _groups.Length + 1);
-            _groups[_groups.Length - 1] = new Group(groupno, fullname, isonline);
-        }
-        //public string CreateNewGroup(string groupno,string fullname)
-        //{
-        //    string Group = null;
-        //    if (Group == groupno )
-        //    {
-        //        return "Please choose correct groupno or fullname";
-        //    }
-        //    Group group = new Group();
-        //    _groups.Add(group);
-        //    return group.No;
-        //}       
-        public void CreateStudent(string groupno, string fullname, SType sType)
+            _groups[_groups.Length - 1] = new Group(groupType, limit);
+            return;
+
+        }           
+        public void CreateStudent(string groupno, string fullname, SType sType, bool isOnline)
         {            
             Group group = null;
 
@@ -57,8 +41,9 @@ namespace Console_Application
             }
             if (group != null)
             {
-                Student student = new Student(groupno, fullname, sType);
-                group.CreatedStudent(student);                
+                Student student = new Student(groupno, fullname, sType, isOnline);
+                group.CreatedStudent(student);
+                return;
             }
             Console.WriteLine("group no find");
             
@@ -77,7 +62,7 @@ namespace Console_Application
                     }
                     else
                     {
-                        Console.WriteLine("no limit");
+                        Console.WriteLine("new limit no find");
                     }
 
                     group.groupType = groupType;
@@ -85,33 +70,13 @@ namespace Console_Application
 
                     foreach (Student student in group.Students)
                     {
-                        student.GroupNo = groupno;
+                        student.Fullname = groupno;
                     }
                     return;
                 }
                
             }            
-            Console.WriteLine("Group no find");
-
-            //if (group.No.ToLower().Trim() == groupno.ToLower().Trim())
-            //{
-            //    existedgroup = group;
-            //}
-
-            //if ( existedgroup == null)
-            //{
-            //    Console.WriteLine("Please coose correct groupno");
-            //    return;
-            //}
-            //foreach (Group group in _groups)
-            //{
-            //    if (group.No.ToLower().Trim() == newGroupNo.ToLower().Trim())
-            //    {
-            //        Console.WriteLine($"{newGroupNo} already group exist");
-            //        return;
-            //    }
-            //}
-            //existedgroup.No = newGroupNo.ToUpper();
+            Console.WriteLine("GroupNo no find");            
         }
         public Group FindGroup(string no)
         {
@@ -127,6 +92,16 @@ namespace Console_Application
 
         public void AllStuListShow()
         {
+            Console.WriteLine();
+        }
+
+        internal void CreatenewGroup(string groupno, OlGroupType groupType, int limitNum)
+        {
+            Console.WriteLine();
+        }        
+
+        public void GroupsListSHow(int limit)
+        {
             string no = null;
             Group group = FindGroup(no);
             if (group == null)
@@ -138,51 +113,31 @@ namespace Console_Application
             {
                 Console.WriteLine(student);
             }
-        }
-
-        public void CreatenewGroup(string groupno, OlGroupType groupType, int limitNum)
-        {
-            Console.WriteLine();
-        }
-
-        public void GroupsListSHow(string AllGroupno, SType sType, int limit)
-        {
-            Console.WriteLine();
-        }
-
-        public void GroupStulist(string groupno, bool isonline, string newGroupNo)
-        {
-            throw new NotImplementedException();
-        }
+        }        
 
         public void CreateNewGroup(string groupno, string fullname, bool isonline)
         {
-            throw new NotImplementedException();
+            Console.WriteLine();
         }
 
         public void GroupsListShow(string AllGroupno, int limit)
         {
-            throw new NotImplementedException();
+            Console.WriteLine();
         }
 
         public void GroupEdit(string groupno, string newGroupNo)
         {
-            throw new NotImplementedException();
+            Console.WriteLine();
         }
 
-        public void GroupStulist()
+        public void GroupStulist(string groupno)
         {
-            throw new NotImplementedException();
+            Console.WriteLine();
         }
 
         void IGroupServis.CreateStudent(string groupno, string fullname, SType sType)
         {
-            throw new NotImplementedException();
-        }        
-        //public string CreatenewGroup(string groupno, string fullname, bool isonline)
-        //{
-        //    Array.Resize(ref _groups, _groups.Length + 1);
-        //    _groups[_groups.Length - 1] = new Group(groupno, fullname, isonline);
-        //}
+            Console.WriteLine();
+        }                
     }
 }
