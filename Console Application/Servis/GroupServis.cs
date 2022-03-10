@@ -19,14 +19,13 @@ namespace Console_Application
             Group group = new Group(category, isonline);
             Groups.Add(group);            
         }
-
         public void EditGroup(string groupno, string newGroupNo)
         {
             Group existedgroup = FindGroup(groupno);
 
             if (existedgroup == null)
             {
-                Console.WriteLine("choose correct group no");
+                Console.WriteLine("Choose Correct Group No");
             }
             foreach (Group group in Groups)
             {
@@ -36,9 +35,8 @@ namespace Console_Application
                     return;
                 }
 
-            }
-            ////////existedgroup.No = newGroupNo.ToUpper();
-            Console.WriteLine($"{groupno} group change to {newGroupNo}");
+            }            
+            Console.WriteLine($"{groupno} Group Change to {newGroupNo}");
         }
 
         public Group FindGroup(string no)
@@ -52,7 +50,6 @@ namespace Console_Application
             }
             return null;
         }
-
         public void CreateStudent(string groupno, string fullname, SType sType, string isOnline)
         {
             Student student1 = new Student(fullname,sType, isOnline);
@@ -65,10 +62,10 @@ namespace Console_Application
                 }
                 else
                 {
-                    Console.WriteLine("no group");
+                    Console.WriteLine("No Group");
                 }
             }            
-            Console.WriteLine("group no find");
+            Console.WriteLine("Group No Find");
         }  
         
         public void GroupShow()
@@ -92,38 +89,7 @@ namespace Console_Application
             if (group != null)
             {
                 Console.WriteLine(group.Students);
-            }
-           
-            
-        }
-        //void IGroupServis.CreateStudent(string groupno, string fullname, SType sType)
-        //{
-        //    Group group = null;
-
-        //    foreach (Group item in _groups)
-        //    {
-        //        if (item.No == groupno.Trim().ToUpper())
-        //        {
-        //            group = item;
-        //        }
-        //    }
-        //    if (group != null)
-        //    {
-        //        bool isOnline = false;
-        //        Student student = new Student(groupno, fullname, sType, isOnline);
-        //        group.CreatedStudent(student);
-        //        return;
-        //    }
-        //    Console.WriteLine("group no find");
-        //}
-        //public void CreateGroup(string groupno, bool isonline, int limit)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public void AllStuListShow(int limit)
-        //{
-        //    throw new NotImplementedException();
-        //}
+            }                      
+        }                
     }
 }

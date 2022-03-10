@@ -10,21 +10,21 @@ namespace Console_Application
         static void Main(string[] args)
         {
             GroupServis groupServis = new GroupServis();
-
-            Console.WriteLine("Course Application");
+            Console.WriteLine("Course Application!\n");
             int Selection;
+            int Selection1;
             do
             {
                 Console.WriteLine("1. CreateGroup");
-                Console.WriteLine("2. GroupList");
-                Console.WriteLine("3. GroupEdit");
-                Console.WriteLine("4. GroupStuShow");
-                Console.WriteLine("5. AllStuList");
+                Console.WriteLine("2. EditGroup");
+                Console.WriteLine("3. GroupStuList");
+                Console.WriteLine("4. GroupListShow");
+                Console.WriteLine("5. AllStuListShow");
                 Console.WriteLine("6. CreateStudent");
                 Console.WriteLine("0. Exit");
 
                 string strselection = Console.ReadLine();
-                bool result = int.TryParse(strselection, out Selection);
+                bool result = int.TryParse(strselection, out Selection);                
                 switch (Selection)
                 {
                     case 1:
@@ -37,7 +37,7 @@ namespace Console_Application
                         MenuServis.GroupStulistMenu();
                         break;
                     case 4:
-                        MenuServis.GroupsListSHowMenu();
+                        MenuServis.GroupListShowMenu();
                         break;
                     case 5:
                         MenuServis.AllStuListShowMenu();
@@ -47,11 +47,15 @@ namespace Console_Application
                         break;
                     default:
                         break;
-                }
+                }               
 
-            } while (true);
+            } while (Selection!=0);            
         }
-}   }
+        
+    }
+}
+
+
     
     
 

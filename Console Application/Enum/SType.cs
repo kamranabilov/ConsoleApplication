@@ -7,6 +7,6 @@ namespace Console_Application
     enum SType
     {
         Garantee = 1,
-        NoGarantee
+        NoGarantee,
     }
 }

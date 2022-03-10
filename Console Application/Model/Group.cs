@@ -14,10 +14,7 @@ namespace Console_Application
         public Enum.Categories Category;
         public bool IsOnline;
         public int Limit = 0;
-        public List<Student> Students;
-        public Group()
-        {
-        }
+        public List<Student> Students;        
         public Group(Enum.Categories category, bool isonline)
         {
             IsOnline = isonline;
@@ -38,43 +35,13 @@ namespace Console_Application
                 default:
                     break;
             }
-                                    
+            Category = category;
+            count++;                                    
         }
         public override string ToString()
         {
-            //string status = IsOnline ? "isonline" : "Offline";
+            string status = IsOnline ? "3.isonline" : "4. Offline";
             return $"Group No: {No}/nCategories: {Category}";
-        }
-
-        // No = $"{Categories.Substring(0, 1).ToUpper()}{_count}";
-        //No = no;
-        //GroupType = grouptype;
-        //Limit = limit;
-        //IsOnline = isonline;
-        //count++;
-        //No = $"{char.ToUpper(groupType.ToString()[0])}{_count}";
-
-        //public void CreatedGroup()
-        //{
-        //}
-        //public Group(string groupno)
-        //{
-        //}
-        //public Group(OlGroupType groupType1, int limitNum)
-        //{
-        //}
-        //public void CreatedStudent(Student student)
-        //{
-        //    if (Students.Length < Limit)
-        //    {
-        //        Array.Resize(ref Students, Students.Length + 1);
-        //        Students[Students.Length - 1] = student;
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("no pleace group");
-        //    }
-        //}        
+        }                             
     }
 }

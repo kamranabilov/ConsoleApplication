@@ -11,80 +11,70 @@ namespace Console_Application
        
         public static void CreateGroupMenu()
         {
-            Console.WriteLine("Choose Category group");
+            Console.WriteLine("Correct Choose Category");
             Console.WriteLine("1. Programming");
             Console.WriteLine("2. Design");
-            Console.WriteLine("3.System_administration");            
+            Console.WriteLine("3.System_administration");           
             int category;
             string categstr = Console.ReadLine();
-            bool resultCat = int.TryParse(categstr, out category);
-            //Categories category1 = Categories.Programming;
+            bool resultCat = int.TryParse(categstr, out category);            
             if (resultCat)
             {
                 switch (category)
                 {
-                    case (int) Categories.Programming:
-                        //category1 = groupServis.p(groupno,isonline,category);
-                        
-                        Console.WriteLine($"{category} group created");
+                    case (int) Categories.Programming:                                               
+                        Console.WriteLine($"{category} Group Created");
                         break;
-                    case (int)Categories.Design:
-                        //category1 = groupServis.CreateGroup(Categories.Design);
-                        Console.WriteLine($"{category} group created");
+                    case (int)Categories.Design:                        
+                        Console.WriteLine($"{category} Group Created");
                         break;
-                    case (int)Categories.System_administrtion:
-                        //category1 = groupServis.CreateGroup(Categories.System_administrtion);
-                        Console.WriteLine($"{category} group created");
+                    case (int)Categories.System_administration:                       
+                        Console.WriteLine($"{category} Group Created");
                         break;
                     default:
+                        Console.WriteLine("Correct Choose Group");
                         break;
                 }
             }
             else
             {
-                Console.WriteLine("correct valid category");
+                Console.WriteLine("Correct Choose Category");
             }
         }
-
         public static void EditGroupMenu()
         {
-            Console.WriteLine("choose group no");
+            Console.WriteLine("Choose Group No");
             string no = Console.ReadLine();
-            Console.WriteLine("choose new group no");
+            Console.WriteLine("Choose New Group No");
             string newNo = Console.ReadLine();
             groupServis.EditGroup(no, newNo);
         }
-
         public static void CreateStudentMenu()
         {
-            Console.WriteLine("choose group no");
+            Console.WriteLine("Choose Group No");
             string no = Console.ReadLine();
-            Console.WriteLine("fullname add");
+            Console.WriteLine("Fullname enter add");
             string fullname = Console.ReadLine();
-            Console.WriteLine("sType");
+            Console.WriteLine("SType");
             bool sType;
             string sTypestr = Console.ReadLine();
             bool result = bool.TryParse(sTypestr, out sType);
-            Console.WriteLine("isonlie");
+            Console.WriteLine("isonlie");           
             bool isonline;
             string isonlinestr = Console.ReadLine();
-            bool result1 = bool.TryParse(isonlinestr, out isonline);
-            //groupServis.CreateStudent(no, fullname, sType, isonline);
+            bool result1 = bool.TryParse(isonlinestr, out isonline);            
         }
-
-        public static void GroupsListSHowMenu()
+        public static void GroupListShowMenu()
         {
             groupServis.GroupShow();            
         }
-
         public static void AllStuListShowMenu()
         {
             groupServis.AllStuListShow();
         }
-
         public static void GroupStulistMenu()
         {
-            Console.WriteLine("plase group no");
+            Console.WriteLine("Please choose Group No");
             string groupno = Console.ReadLine();
             groupServis.GroupStulist(groupno);
         }

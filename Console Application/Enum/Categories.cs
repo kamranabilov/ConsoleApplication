@@ -8,7 +8,6 @@ namespace Console_Application.Enum
     {
         Programming =1,
         Design,
-        System_administrtion,
-        System_administration
+        System_administration,       
     }
 }
